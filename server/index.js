@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const socket = require('socket.io');
 const app = express();
 const server = http.createServer(app);
+const user = require('./routes/userRoutes');
 const io = socket(server);
 const PORT = process.env.PORT || 5000;
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({extended:true}));
 
 // routes
 app.get('/',(req,res)=>res.send('Welcome to Devcom server'));
+app.use('/user',user);
 
 
 // socket event handlers
