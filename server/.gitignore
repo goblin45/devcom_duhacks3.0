@@ -1,2 +1,5 @@
-node_modules
 .env
+.txt
+.env.local
+node_modules
+
