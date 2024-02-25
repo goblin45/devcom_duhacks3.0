@@ -79,3 +79,21 @@ export const coloredSvgsForProjectCard = [
         </svg>
     )
 ]
+
+export const CancelConnectUserIconSVG = () => {
+    return (
+        <svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_249_983)">
+                <path d="M15.6873 4.625C15.5342 6.69023 13.9685 8.375 12.2498 8.375C10.531 8.375 8.96268 6.69063 8.81229 4.625C8.65604 2.47656 10.1795 0.875 12.2498 0.875C14.3201 0.875 15.8435 2.51562 15.6873 4.625Z" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.2499 10.875C8.8515 10.875 5.40228 12.75 4.764 16.2891C4.68588 16.7156 4.92846 17.125 5.37533 17.125H19.1249C19.5718 17.125 19.8132 16.7156 19.7363 16.2891C19.0976 12.75 15.6484 10.875 12.2499 10.875Z" stroke="#1E1E1E" stroke-miterlimit="10"/>
+                <path d="M2.53418 10.4662L4.5003 8.50006L6.46643 10.4662M6.46643 6.53394L4.49993 8.50006L2.53418 6.53394" stroke="#1E1E1E" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_249_983">
+                    <rect width="21" height="18" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+
+    )
+}

@@ -82,7 +82,7 @@ const NavBar = () => {
 	return (
 		<div className="nav-blur w-full h-20 fixed top-0 left-0 flex justify-between px-12 items-center bg-gradient-to-b from-custom-dark to-transparent text-white font-devcom z-10">
 		<div
-			className="p-2 rounded-lg hover:cursor-pointer hover:bg-custom-hover"
+			className="p-2 rounded-lg hover:cursor-pointer hover:bg-custom-hover z-10"
 			onClick={toggleMenu}
 		>
 			{isMenuOpen ? (

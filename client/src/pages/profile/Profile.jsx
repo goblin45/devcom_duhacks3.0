@@ -22,11 +22,12 @@ import { skillSetSvgs } from '../../assets/SkillSetSVGs';
 import { ProjectExpCard, WorkExpCard, WorkExpCardTag, coloredSvgsForProjectCard } from "../../assets/ForProfile"
 import { BehanceIconSvg, GitHubIconSvg } from '../../assets/ForHackathonCard';
 import Skillset from '../../components/profile/Skillset';
+import About from '../../components/profile/About';
 
 
 const Profile = () => {
 
-    const [selectedSection, setSelectedSection] = useState('skillset')
+    const [selectedSection, setSelectedSection] = useState('about')
 
     const changeSelectedSection = (section) => {
         setSelectedSection(section)
@@ -36,7 +37,13 @@ const Profile = () => {
         <div className="nav-blur noscroll w-screen h-screen overflow-y-auto">
             <ProfileBG/>
             <NavBar/>
-            <div className="fixed top-20 left-12 text-custom-gray text-lg flex justify-evenly items-center gap-10 bg-gradient-to-r from-custom-dark to-transparent z-10">
+            <div className="fixed top-16 left-12 text-custom-gray text-lg flex justify-end items-end gap-10 z-10">
+                <span 
+                    className={`${(selectedSection === 'about') && 'border-b-2 border-custom-green'} cursor-pointer`}
+                    onClick={() => changeSelectedSection('about')}
+                >
+                    about
+                </span>
                 <span 
                     className={`${(selectedSection === 'skillset') && 'border-b-2 border-custom-green'} cursor-pointer`}
                     onClick={() => changeSelectedSection('skillset')}
@@ -57,13 +64,17 @@ const Profile = () => {
                 </span>
             </div>
             {
-                (selectedSection === 'skillset') ?
-                    <Skillset/>
+                (selectedSection === 'about') ? 
+                    <About/>
                 :
-                    (selectedSection === 'connect-req') ?
-                        <ConnectReq/>
+                    (selectedSection === 'skillset') ?
+                        <Skillset/>
                     :
-                        <CollabReq/>
+                        (selectedSection === 'connect-req') ?
+                            <ConnectReq/>
+                        :
+                            (selectedSection === 'collab-req') &&
+                                <CollabReq/>
             }
             
         </div>

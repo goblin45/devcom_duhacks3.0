@@ -15,7 +15,7 @@ const ChatFooter = ({sendMessage}) => {
 
     // enter press not working
     const sendOnEnterPress = (e) => {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' || e.key === 'enter') {
             // console.log('enter')
             if (textVal?.length > 0) {
                 handleNewMessage()
@@ -40,6 +40,7 @@ const ChatFooter = ({sendMessage}) => {
                     placeholder='Type a message...'
                     value={textVal}
                     onChange={(e) => setTextVal(e.target.value)}
+                    onKeyDown={sendOnEnterPress}
                 />
                 <div className='absolute right-3 hover:cursor-pointer'>
                     <AttachIconSVG/>
