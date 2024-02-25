@@ -1,0 +1,3 @@
+#notification-modal::-webkit-scrollbar {
+    display: hidden;
+}
