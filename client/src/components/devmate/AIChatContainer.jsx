@@ -1,10 +1,10 @@
-import { useState, useContext } from "react"
+import { useContext } from "react"
 
 import { UserContext } from "../../contexts/UserState"
 
 import { DevMateAiIconSVG, LargeDevMateAiIconSVG, SendChatIconSVG } from "../../assets/ForDevMate"
 
-const AIChatContainer = ({conversation}) => {
+const AIChatContainer = ({conversation, updateConversation}) => {
 
     const userContext = useContext(UserContext)
 
@@ -28,25 +28,6 @@ const AIChatContainer = ({conversation}) => {
         )
     }
 
-    const [inputQuery, setInputQuery] = useState('')
-
-    const handleQueryChange = (e) => {
-        setInputQuery(e.target.value)
-    }
-
-    const handleEnterPress = (e) => {
-        if (e.key === 'Enter' || e.key === 'enter') {
-            addConversation()
-        }
-    }
-
-    const addConversation = () => {
-        if (inputQuery?.length > 0) {
-            conversation?.chats?.push({request: inputQuery})
-            setInputQuery('')
-        } 
-    }
-
     return (
         <div className="w-full h-full rounded-lg p-2 flex flex-col justify-center items-center">
             <div className="h-[86%] w-full flex flex-col overflow-auto custom-scrollbar text-[#D9D9D9]">
@@ -63,14 +44,14 @@ const AIChatContainer = ({conversation}) => {
                                                     (conv.request) &&
                                                         <div className="w-full p-2 flex justify-between items-start gap-6">
                                                             <AIChatDP type={'request'}/>
-                                                            <p className="ai-chat-text w-full">{conv.request}</p>
+                                                            <p className="ai-chat-text">{conv.request}</p>
                                                         </div>
                                                 }
                                                 {   
                                                     (conv.response) && 
                                                         <div className="w-full p-2 flex justify-between items-start gap-6">
                                                             <AIChatDP type={'response'}/>
-                                                            <p className="ai-chat-text w-full">{conv.response}</p>
+                                                            <p className="ai-chat-text">{conv.response}</p>
                                                         </div>   
                                                 }
                                                 
@@ -108,17 +89,11 @@ const AIChatContainer = ({conversation}) => {
             <div className="h-[14%] w-full p-2">
                 <div className="relative h-full w-full flex items-center">
                     <input 
-                        className="devmate-chat-footer h-full w-full bg-transparent text-gray-400 focus:outline-gray-600 outline-none rounded-lg pl-5 pr-16 py-2" 
+                        className="devmate-chat-footer h-full w-full bg-transparent focus:outline-gray-600 outline-none rounded-lg pl-5 pr-16 py-2" 
                         type="text"
-                        value={inputQuery}
-                        onChange={handleQueryChange}
-                        onKeyDown={handleEnterPress}
                         placeholder="Write your query here..."
                     />
-                    <div 
-                        className="absolute right-2 h-10 w-10 border rounded-lg border-custom-green flex justify-center items-center cursor-pointer"
-                        onClick={() => addConversation()}
-                    >
+                    <div className="absolute right-2 h-10 w-10 border rounded-lg border-custom-green flex justify-center items-center cursor-pointer">
                         <SendChatIconSVG/>
                     </div>
                 </div>
