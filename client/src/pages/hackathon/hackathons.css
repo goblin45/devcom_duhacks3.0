@@ -1,0 +1,7 @@
+.shadow-custom {
+    box-shadow: 1px 1px 1px 2px rgb(255 255 255 / 0.2), -1px -1px 3px 2px rgb(255 255 255 / 0.2);
+}
+
+#hackathon-cards-section::-webkit-scrollbar {
+    display: none;
+}

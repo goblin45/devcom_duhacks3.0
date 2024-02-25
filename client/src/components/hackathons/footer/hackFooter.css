@@ -1,0 +1,16 @@
+.slash-prompt-box {
+    min-width: 29rem;
+    background-color: #1E1E1E;
+}
+
+.prompt-text {
+    background-color: #154038;
+}
+
+#search-input-box::-webkit-scrollbar {
+    display: none;
+}
+
+.shadow-top-dark {
+    box-shadow: 0 10px 50px 50px #181A1B;
+}

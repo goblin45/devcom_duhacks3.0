@@ -1,0 +1,9 @@
+.article-card {
+    background-color: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.article-user-highlight {
+    background-color: #1D1F1F;
+}
